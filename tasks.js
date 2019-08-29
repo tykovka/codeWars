@@ -13,7 +13,15 @@ function mask (cc) {
 function maskFast (cc) {
   return cc.slice(0, -4).replace(/\w/g,'#') + cc.slice(-4);
 }
- console.log(maskFast('111111'));
- console.log(maskFast('111'));
- console.log(maskFast('111111dmkcdmkvmdk'));
- 
+
+/**
+ * kata 8
+ */
+
+arr = [0,1,1,0];
+function translNumberSystem (arr, system){
+  str = arr.join('');
+  return parseInt(str,system)
+}
+console.log(translNumberSystem(arr,2));
+
