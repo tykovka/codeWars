@@ -17,11 +17,18 @@ function maskFast (cc) {
 /**
  * kata 8
  */
+res = 0;
+arr = [0,0,0,1];
 
-arr = [0,1,1,0];
 function translNumberSystem (arr, system){
   str = arr.join('');
   return parseInt(str,system)
 }
-console.log(translNumberSystem(arr,2));
 
+
+function highAndLow(numbers){
+  newNum = numbers.split(' ').map ((item) => {
+    return Number(item)} 
+  );
+  return `${Math.max(...newNum)} ${Math.min(...newNum)}`;
+}
