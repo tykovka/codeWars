@@ -72,7 +72,16 @@ var stairs = [sunday,monday,tuesday,wednesday,thursday,friday,saturday];
 return stairs.reduce((sum, arr) => {arr.forEach(i => sum += i); return sum}, 0)
 }
 
-function accum (s) {
-  return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
+function accum (str) {
+  return str.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
 }
+
+function factorial(n){
+  res = 1;
+  if ( n > 1) {
+    res = n * factorial(n - 1);
+  }
+  return res;
+  }
+  
 
