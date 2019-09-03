@@ -71,4 +71,8 @@ var stairs = [sunday,monday,tuesday,wednesday,thursday,friday,saturday];
 
 return stairs.reduce((sum, arr) => {arr.forEach(i => sum += i); return sum}, 0)
 }
-sum();
+
+function accum (s) {
+  return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
+}
+
