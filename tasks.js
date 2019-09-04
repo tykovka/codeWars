@@ -82,6 +82,33 @@ function factorial(n){
     res = n * factorial(n - 1);
   }
   return res;
-  }
+}
   
+function positiveSum(arr) { 
+  var sum = 0; 
+  for ( i in arr) {
+    if(arr[i] > 0) {
+    sum += arr[i];
+    }
+  }
+  return sum;
+  }
+
+  function positiveSum(arr) {
+    return arr.reduce((a,b)=> a + (b > 0 ? b : 0),0);
+  }
+
+result =[]
+arr = [1,2,3,4,3,3,5,5]
+
+function unique( arr ) {
+  for (let i of arr ) {
+    if (!result.includes(i)) {
+    result.push(i);
+    }
+  }
+  return result;
+}
+res = unique( arr );
+console.log(res)
 
