@@ -166,6 +166,39 @@ function movie(card, ticket, perc) {
   return count;
 };
 
+// function spinWords(str) {
+//   for (let i = 0; i < str.length-5; i++ ) {
+//     if (str[i] != str[i+1] != '\s') {
+//       str = str.replace(str[i],str[i+1]);
+//       str = str.replace(str[i+2],str[i]);
+//       console.log(str)
+//     }
+//   }
+//   return str;
+// }
 
 
+// function num2str(n, text_forms) {  
+//   n = Math.abs(n) % 100; 
+//   var n1 = n % 10;
+//   if (n > 10 && n < 20) { return text_forms[2]; }
+//   if (n1 > 1 && n1 < 5) { return text_forms[1]; }
+//   if (n1 == 1) { return text_forms[0]; }
+//   return text_forms[2];
+// }
+// text_forms =['минута', 'минуты', 'минут']
+// console.log(num2str(578987, text_forms));
+
+function conjugation (num, form1, form2, form3 ) {
+ mod = num % 10; 
+ if (num % 10 === 0) { return form3};
+ if (num > 4 && num < 20) { return form3};
+ if (mod === 1 ) { return form1};
+ if (mod == 2) { return form2} 
+ if (mod > 3 && mod < 5) { return form2}
+ return form3;
+}
+num = 3199;
+res = conjugation (num, 'файл', 'файлa', 'файлов')
+console.log(`${num} ${res}`);
 
