@@ -17,8 +17,8 @@ function maskFast(cc) {
 /**
  * kata 8
  */
-res = 0;
-arr = [0, 0, 0, 1];
+// res = 0;
+// arr = [0, 0, 0, 1];
 
 function translNumberSystem(arr, system) {
   str = arr.join('');
@@ -159,46 +159,72 @@ function movie(card, ticket, perc) {
   let costToOneTisk = 0;
   let count = 1;
   while (Math.ceil(costToCard) >= costToOneTisk) {
-    costToCard += ticket * Math.pow(perc, count) ;
+    costToCard += ticket * Math.pow(perc, count);
     costToOneTisk += ticket;
     count++;
   }
   return count;
 };
 
+function conjugation(num, form1, form2, form3) {
+  mod = num % 10;
+  if (num % 10 === 0) { return form3 };
+  if (num > 4 && num < 20) { return form3 };
+  if (mod === 1) { return form1 };
+  if (mod == 2) { return form2 }
+  if (mod > 3 && mod < 5) { return form2 }
+  return form3;
+}
+
 // function spinWords(str) {
-//   for (let i = 0; i < str.length-5; i++ ) {
-//     if (str[i] != str[i+1] != '\s') {
-//       str = str.replace(str[i],str[i+1]);
-//       str = str.replace(str[i+2],str[i]);
+//   for (let i = 0; i < str.length - 1 ; i++ ) {
+//     var state = str[i];
+//       str = str.replace(str[i], str[i + 1]);
+//       str = str.replace(str[i + 1], state);
 //       console.log(str)
-//     }
 //   }
 //   return str;
 // }
+// res = spinWords('hello');
+// console.log(res)
 
+let arr_en = [' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-// function num2str(n, text_forms) {  
-//   n = Math.abs(n) % 100; 
-//   var n1 = n % 10;
-//   if (n > 10 && n < 20) { return text_forms[2]; }
-//   if (n1 > 1 && n1 < 5) { return text_forms[1]; }
-//   if (n1 == 1) { return text_forms[0]; }
-//   return text_forms[2];
-// }
-// text_forms =['минута', 'минуты', 'минут']
-// console.log(num2str(578987, text_forms));
+function addLetters(...letters) {
+  let sumLetters = 0;
+  var arr = [...letters];
+  if (arr.length === 0) {
+    return 'z';
+  }
+  if (arr.length === 1 && arr[0] === 'z') {
+    return 'z';
+  }
+  for (i = 0; i < arr.length; i++) {
 
-function conjugation (num, form1, form2, form3 ) {
- mod = num % 10; 
- if (num % 10 === 0) { return form3};
- if (num > 4 && num < 20) { return form3};
- if (mod === 1 ) { return form1};
- if (mod == 2) { return form2} 
- if (mod > 3 && mod < 5) { return form2}
- return form3;
+    if (arr[i] === 'z') {
+      arr_en.indexOf(arr[i]) === 0;
+    }
+    else {
+      sumLetters += arr_en.indexOf(arr[i]);
+    }
+    if (sumLetters > 26) {
+      sumLetters = sumLetters - 26;
+    }
+  }
+  return arr_en[sumLetters];
 }
-num = 3199;
-res = conjugation (num, 'файл', 'файлa', 'файлов')
-console.log(`${num} ${res}`);
+
+
+
+function isPrime(num) {
+  var isSimple = true;
+  if (num <= 1 ) {
+    isSimple = false
+  }
+ for (var j = 2; j <= Math.sqrt(num) ; j++) {
+      if ( num % j === 0 ) isSimple = false;
+    }
+return isSimple;
+}
+console.log(isPrime(2))
 
