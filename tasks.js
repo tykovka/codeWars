@@ -27,10 +27,7 @@ function translNumberSystem(arr, system) {
 
 
 function highAndLow(numbers) {
-  newNum = numbers.split(' ').map((item) => {
-    return Number(item)
-  }
-  );
+  const newNum = numbers.split(' ').map(item => Number(item))
   return `${Math.max(...newNum)} ${Math.min(...newNum)}`;
 }
 
@@ -218,13 +215,33 @@ function addLetters(...letters) {
 
 function isPrime(num) {
   var isSimple = true;
-  if (num <= 1 ) {
+  if (num <= 1) {
     isSimple = false
   }
- for (var j = 2; j <= Math.sqrt(num) ; j++) {
-      if ( num % j === 0 ) isSimple = false;
-    }
-return isSimple;
+  for (var j = 2; j <= Math.sqrt(num); j++) {
+    if (num % j === 0) isSimple = false;
+  }
+  return isSimple;
 }
-console.log(isPrime(2))
 
+function grow(x) {
+  return x.reduce((mult, el) => mult *= el)
+}
+
+function findShort(s) {
+  newArr = 0;
+  return newArr = Math.min(...(s.split(' ').map(el => el.length)));
+}
+
+function toSixteenSystem(x) {
+  if (x < 0) x = 0
+  if (x > 255) x = 255;
+  hex = x.toString(16);
+  if (hex.length < 2) { hex =  '0' + hex  };
+  return hex.toUpperCase();
+}
+
+function rgb(r, g, b) {
+  return toSixteenSystem(r) + toSixteenSystem(g) + toSixteenSystem(b);
+}
+console.log(rgb(95,10,261));
