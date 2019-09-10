@@ -237,11 +237,36 @@ function toSixteenSystem(x) {
   if (x < 0) x = 0
   if (x > 255) x = 255;
   hex = x.toString(16);
-  if (hex.length < 2) { hex =  '0' + hex  };
+  if (hex.length < 2) { hex = '0' + hex };
   return hex.toUpperCase();
 }
 
 function rgb(r, g, b) {
   return toSixteenSystem(r) + toSixteenSystem(g) + toSixteenSystem(b);
 }
-console.log(rgb(95,10,261));
+
+function well(x) {
+  var good = 0;
+  x.forEach(el => {
+    if (el === 'good') good++;
+  });
+  return good < 1 ? 'Fail!' :
+    good < 3 ? 'Publish!' : 'I smell a series!';
+}
+
+function digital_root(n) {
+  sum = 0;
+  numStr = n.toString().split('');
+  for (var i = 0; i < numStr.length; i++) {
+    sum += Number(numStr[i]);
+  }
+  if (sum.toString().split('').length > 1) {
+    digital_root(sum);
+  }
+  return sum;
+}
+
+function digital_root(n) {
+  return (n - 1) % 9 + 1;
+}
+
