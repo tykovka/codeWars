@@ -361,8 +361,11 @@ function orderedCount(text) {
 // })
 
 arr = ['A','1','2','D','B', 'ф', 'л'];
-arrStr = arr.join('')
 num = arr.join('').replace(/\D/g, '');
 newStr = arrStr.replace(/\d/g, '') + num;
-newArr = newStr.split('');
-console.log(newArr) ;
+neddwArr = ndddddddewStr.split('');
+console.log(newcdcdArr) ;
+
+mdkcmskmckenfejvnfjnvjfnjvnfjnvfekmdl,lx,lskdineinfirneifnrinfi
+
+nvjnefjnvjfnjvnfjnjvnjf
