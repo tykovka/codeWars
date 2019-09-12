@@ -270,3 +270,99 @@ function digital_root(n) {
   return (n - 1) % 9 + 1;
 }
 
+function orderedCount(text) {
+  res = []
+  count = 0;
+  textArr = text.split('');
+  for (var i = 0; i < textArr.length; i++) {
+    count = 0;
+    for (var j = 0; j < textArr.length; j++)
+      if (textArr[i] == textArr[j]) {
+        count++;
+        res.push([textArr[i], count])
+      }
+  }
+  return res;
+}
+
+// const orderedCount = text => [...new Set(text)].map(letter => [letter, text.split(letter).length - 1])
+
+// function sumStrings(a,b) { 
+//   num = BigInt(a) + BigInt(b); 
+//   return  num.toString();
+// }
+
+// function sumStrings(a,b) {
+//   res = [];
+//   arrA = a.split('').reverse();
+//   arrB = b.split('').reverse();
+//   while (arrA.length !== arrB.length) {
+//     if (arrA.length == 1 || arrB.length == 1) {
+//       break;
+//     }
+//     if (arrA.length > arrB.length) {
+//       arrB.push(0);
+//     }
+//     if (arrA.length < arrB.length) {
+//       arrA.push(0);
+//     }
+//   }
+//   for ( var i = 0; i < arrA.length; i++)  {
+//     sum = Number(arrA[i]) + Number(arrB[i]);
+//     if ( sum > 10) {
+//       res.push(sum % 10);
+//       arrA[i+1] = Number(arrA[i+1]) + 1;
+//     }
+//     else {
+//       res.push(Number(arrA[i]) + Number(arrB[i]));
+//     }
+//   }
+//   return res.reverse().join('');
+// }
+
+
+
+// function sumStrings(a, b) {
+//   ArrA = a.split('').reverse();
+//   ArrA.map(x => Number(x));
+
+//   ArrB = b.split('').reverse();
+//   ArrB.map(x => Number(x));
+
+//   for (var i = 0; i < ArrA.length; i++) {
+
+
+//   }
+
+// }
+
+// arr = ['A','D','G','B', 'ф', 'л', 'к', 'з','1','2']
+// arrNew = [];
+// for ( var i = 0;  i < arr.length ; i++) {
+//   for ( var j = 0 ; j < arr.length; j++) {
+//   if ( arr[i].charCodeAt(0) > arr[j].charCodeAt(0)) {
+//     [arr[i], arr[j]] = [ arr[j], arr[i]]
+//   }
+//   }
+// }
+// arrNew = arr.filter(el => el.charCodeAt(0) >= 48 && el.charCodeAt(0) <= 57).sort()
+// arrNew1 = arr.filter(el => el.charCodeAt(0) >=192).sort()
+// arrNew2 = arr.filter(el => el.charCodeAt(0) < 192 &&  el.charCodeAt(0) >= 57).sort();
+// arrNew.push(...arrNew1,...arrNew2)
+// console.log('arrNew  '+ arrNew);
+
+
+// ['G','Б','1'].sort((a, b) => {
+//   const getVal = (l) => {
+//     const k = l.toLowerCase().charCodeAt();
+//     return k > 96 && k < 123 ? k + 1e5 : k;
+//   }
+//   return getVal(a) - getVal(b);
+// })
+
+arr = ['A','1','2','D','B', 'ф', 'л'];
+arrStr = arr.join('')
+num = arr.join('').replace(/\D/g, '');
+newStr = arrStr.replace(/\d/g, '') + num;
+newArr = newStr.split('');
+console.log(newArr) ;
