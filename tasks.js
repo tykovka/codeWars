@@ -360,11 +360,11 @@ function orderedCount(text) {
 //   return getVal(a) - getVal(b);
 // })
 
-arr = ['A','1','2','D','B', 'ф', 'л'];
-arrStr = arr.join('')
-num = arr.join('').replace(/\D/g, '');
-newStr = arrStr.replace(/\d/g, '') + num;
-newArr = newStr.split('');
+// arr = ['A','1','2','D','B', 'ф', 'л'];
+// arrStr = arr.join('')
+// num = arr.join('').replace(/\D/g, '');
+// newStr = arrStr.replace(/\d/g, '') + num;
+// newArr = newStr.split('');
 //push --force
 //push --force
 //push --force
