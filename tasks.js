@@ -365,5 +365,4 @@ arrStr = arr.join('')
 num = arr.join('').replace(/\D/g, '');
 newStr = arrStr.replace(/\d/g, '') + num;
 newArr = newStr.split('');
-console.log(newArr) ;
-//console.lot()
+
